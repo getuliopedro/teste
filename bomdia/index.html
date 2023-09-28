@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Luz Piscante</title>
+    <style>
+        /* Estilo inicial da luz */
+        .light {
+            width: 100px;
+            height: 100px;
+            background-color: gray;
+            transition: background-color 0.5s;
+        }
+
+        /* Estilo da luz piscante */
+        .blinking {
+            animation: blinker 1s linear infinite;
+        }
+
+        /* Animação da luz piscante */
+        @keyframes blinker {
+            100% { background-color: red; }
+            150% { background-color: yellow; }
+            100% { background-color: black; }
+        }
+    </style>
+</head>
+<body>
+    <p>Bom dia</p>
+    <div class="light" id="light"></div>
+    <button onclick="toggleBlink()">Clique para piscar</button>
+
+    <script>
+        function toggleBlink() {
+            const light = document.getElementById("light");
+            light.classList.toggle("blinking");
+        }
+    </script>
+</body>
+</html>
